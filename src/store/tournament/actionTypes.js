@@ -1,0 +1,1 @@
+export const ADVANCE_TEAM = 'tournament.ADVANCE_TEAM';
