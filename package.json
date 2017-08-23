@@ -7,6 +7,7 @@
     "react-dom": "^15.6.1",
     "react-scripts": "1.0.11",
     "redux": "^3.7.2",
+    "redux-testkit": "^1.0.6",
     "redux-thunk": "^2.2.0",
     "seamless-immutable": "^7.1.2"
   },
