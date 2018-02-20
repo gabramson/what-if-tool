@@ -6,7 +6,11 @@ const initialState = Immutable([1,2,0]);
 export default function reduce(state = initialState, action = {}) {
     switch (action.type){
         case types.ADVANCE_TEAM:
-            return([1, 2, 1]);
+            return([
+                ...state.slice(0, 2),
+                state[0],
+                ...state.slice(3, 0)
+            ]);
         default:
             return state;
     }
