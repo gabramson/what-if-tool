@@ -19,3 +19,11 @@ export default function reduce(state = initialState, action = {}) {
             return state;
     }
 }
+
+// selectors
+
+export function getLines(state, props){
+//    console.log(props);
+    return [state[2 * props.gameId - 2], state[2 * props.gameId - 1]];
+//    return [1, 2];
+};
