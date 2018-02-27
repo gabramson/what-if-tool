@@ -1,18 +1,17 @@
+// import React from 'react';
 import { connect } from 'react-redux'
 import * as tournamentSelectors from '../store/tournament/reducer';
-import game from '../components/game';
-
+import Game from '../components/game';
 
 const mapStateToProps = (state, ownProps) => {
     return {
-    //   gameId: ownProps.gameId,
-    //   lines: tournamentSelectors.getLines(state, ownProps)
-    gameId: 1, lines: [1, 2]
+      gameId: ownProps.gameId,
+      lines: tournamentSelectors.getGameLines(state, ownProps)
     }
   }
    
-const gameContainer = connect(
+const GameContainer = connect(
     mapStateToProps
-)(game)
- 
-export default gameContainer
+)(Game)
+
+export default GameContainer

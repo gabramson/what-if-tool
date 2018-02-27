@@ -10,8 +10,8 @@ describe('store/tournament/selectors', () => {
       uut = require('../reducer');
     });
 
-    it('should get topics when empty', () => {
-        const state = [1, 2, 0];
+    it('should get lines from state and props', () => {
+        const state = { tournament: [1, 2, 0]};
         const result = [1, 2];
         const props = {
            gameId: 1
