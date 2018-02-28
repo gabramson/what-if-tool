@@ -16,6 +16,12 @@ describe('store/tournament/selectors', () => {
         const props = {
            gameId: 1
         }
-        Selector(uut.getLines).expect(state, props).toReturn(result);
+        Selector(uut.getGameLines).expect(state, props).toReturn(result);
+    });
+
+    it('should get winner from state', () => {
+        const state = { tournament: [1, 2, 2]};
+        const result = 2;
+        Selector(uut.getWinnerLine).expect(state).toReturn(result);
     });
 });

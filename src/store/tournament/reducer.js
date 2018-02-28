@@ -24,3 +24,7 @@ export default function reduce(state = initialState, action = {}) {
 export function getGameLines(state, props){
     return [state.tournament[2 * props.gameId - 2], state.tournament[2 * props.gameId - 1]];
 };
+
+export function getWinnerLine(state){
+    return state.tournament.slice(-1)[0];
+};
