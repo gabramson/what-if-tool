@@ -24,4 +24,10 @@ describe('store/tournament/selectors', () => {
         const result = 2;
         Selector(uut.getWinnerLine).expect(state).toReturn(result);
     });
+
+    it('should get games from state', () => {
+        const state = { tournament: [1, 2, 3, 4, 0, 0, 0]};
+        const result = 3;
+        Selector(uut.getGames).expect(state).toReturn(result);
+    });
 });

@@ -7,7 +7,7 @@ import App from './App';
 import './index.css';
 import * as reducers from './store/reducers';
 
-const store = createStore(combineReducers(reducers), applyMiddleware(thunk));
+const store = createStore(combineReducers(reducers), {tournament: [1, 2, 3, 4, 0, 0, 0]}, applyMiddleware(thunk));
 
 ReactDOM.render(
    <Provider store={store}>

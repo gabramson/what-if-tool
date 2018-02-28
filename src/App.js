@@ -7,6 +7,10 @@ const App = () => (
   <div className="App">
     <GameContainer gameId={1} />
     <br/>
+    <GameContainer gameId={2} />
+    <br/>
+    <GameContainer gameId={3} />
+    <br/>
     <WinnerContainer  />
   </div>
 );

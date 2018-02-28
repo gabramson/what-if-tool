@@ -28,3 +28,9 @@ export function getGameLines(state, props){
 export function getWinnerLine(state){
     return state.tournament.slice(-1)[0];
 };
+
+export function getGames(state){
+    const n = state.tournament.length;
+    const games = (n-1)/2;
+    return games;
+};
