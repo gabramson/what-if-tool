@@ -1,16 +1,11 @@
 import React from 'react';
-import GameContainer from './containers/gameContainer';
+import GamesContainer from './containers/gamesContainer';
 import WinnerContainer from './containers/winnerContainer';
 import './App.css';
 
 const App = () => (
   <div className="App">
-    <GameContainer gameId={1} />
-    <br/>
-    <GameContainer gameId={2} />
-    <br/>
-    <GameContainer gameId={3} />
-    <br/>
+    <GamesContainer />
     <WinnerContainer  />
   </div>
 );
