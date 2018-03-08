@@ -2,8 +2,8 @@ import _ from 'lodash';
 
 const HOOPS_ENDPOINT = 'http://localhost';
 
-export async function getInitialState() {
-    const url = `${HOOPS_ENDPOINT}/TournamentState/`;
+export async function getInitialState(tournamentState) {
+    const url = `${HOOPS_ENDPOINT}/RunSimulations/`;
     const response = await fetch(url, {
       method: 'GET',
       headers: {
@@ -14,9 +14,9 @@ export async function getInitialState() {
         throw new Error(`tournamentState service failed, HTTP status ${response.status}`);
       }
     const data = await response.json();
-    const children = _.get(data, 'TournamentState');
+    const children = _.get(data, 'Results');
     if (!children) {
-        throw new Error(`tournamentState failed, children not returned`);
+        throw new Error(`runSimulations failed, children not returned`);
     }
     return children;
 }

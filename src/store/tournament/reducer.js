@@ -16,6 +16,8 @@ export default function reduce(state = initialState, action = {}) {
                 state[currentSlot],
                 ...state.slice(nextSlot + 1, n)
             ]);
+        case types.INITIAL_STATE_FETCHED:
+            return(action.tournament);
         default:
             return state;
     }

@@ -1,0 +1,1 @@
+export const UPDATE_SIMULATIONS = 'simulations.UPDATE_SIMULATIONS';

@@ -11,7 +11,7 @@ export function fetchInitialState() {
 	return async function(dispatch, getState) {
 		try {
 			const initialState = await getInitialState();
-			dispatch({type: types.INITIAL_STATE_FETCHED, state: initialState});
+			dispatch({type: types.INITIAL_STATE_FETCHED, tournament: initialState});
 		} catch(error) {
 			console.error(error);
 		}
