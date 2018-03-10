@@ -1,14 +1,17 @@
 .App {
   text-align: left;
   margin-left: 2em;
+  line-height: 18px;
 }
 
 .App-logo {
+  display: hidden;
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 0px;
 }
 
 .App-header {
+  display: hidden;
   background-color: #222;
   height: 150px;
   padding: 20px;
@@ -16,6 +19,7 @@
 }
 
 .App-intro {
+  display: hidden;
   font-size: large;
 }
 
@@ -49,7 +53,7 @@
 }
 
 .Round6 {
-  margin-left: 76em;
+  margin-left: 74em;
   margin-top: -930ex;
 }
 

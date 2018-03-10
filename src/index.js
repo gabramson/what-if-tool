@@ -10,7 +10,7 @@ import {fetchInitialState} from './store/tournament/actions'
 
 const store = createStore(combineReducers(reducers), {tournament: [1, 2, 3, 4, 0, 0, 0]}, applyMiddleware(thunk));
 
-store.dispatch(fetchInitialState())
+store.dispatch(fetchInitialState());
 
 ReactDOM.render(
    <Provider store={store}>

@@ -1,5 +1,6 @@
 import * as types from './actionTypes';
 import {getInitialState} from '../../services/tournamentState'
+import {runSimulations} from '../simulations/actions'
 
 export function advanceTeam(game, line) {
 	return (dispatch, getState) => {
@@ -12,6 +13,7 @@ export function fetchInitialState() {
 		try {
 			const initialState = await getInitialState();
 			dispatch({type: types.INITIAL_STATE_FETCHED, tournament: initialState});
+			dispatch(runSimulations());
 		} catch(error) {
 			console.error(error);
 		}

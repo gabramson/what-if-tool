@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import Immutable from 'seamless-immutable';
 import { Selector } from 'redux-testkit';
 
