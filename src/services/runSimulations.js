@@ -12,7 +12,7 @@ export default async function getSimulationResults(tournamentState) {
       }
     });
     if (!response.ok) {
-        throw new Error(`tournamentState service failed, HTTP status ${response.status}`);
+        throw new Error(`RunSimulations service failed, HTTP status ${response.status}`);
       }
     const data = await response.json();
     const children = _.get(data, 'Results');

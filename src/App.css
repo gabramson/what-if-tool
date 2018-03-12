@@ -23,6 +23,14 @@
   font-size: large;
 }
 
+.Simulations {
+  margin-top:100ex;
+}
+
+.RunSimulations {
+  width:18em;
+}
+
 .Round1 {
   margin-top: 5ex;
   margin-bottom: -5ex;

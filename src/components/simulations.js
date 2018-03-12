@@ -1,10 +1,21 @@
 import React from 'react';
 
-export default function game({results, onRunSimulationsClick}) {
+const simulationRow = (row) => {
+    return (
+        <tr><td>{row.PlayerName}</td></tr>
+    )
+}
+
+export default function simulations({results, onRunSimulationsClick}) {
+    console.log(results.simulations[0]);
     return (
       <div className="Simulations">
-          <button className="RunSimulations" onClick={this.onRunSimulationsClick} />
-          {results}
+            <button className="RunSimulations" onClick={onRunSimulationsClick}>
+                Run Simulations
+            </button>
+            <div>
+                {/* {simulationRow(results.simulations[0])} */}
+            </div>
       </div>
     );
 };

@@ -18,7 +18,6 @@ const Games = ({games}) => {
   const gamesIndices = Array.from({length: games}, (el, index) => index+1);
   const gamesCount = gamesIndices.length;
   const rounds = Math.log2(gamesIndices.length+1);
-  console.log(`${gamesIndices.length}, ${rounds}`);
   const gamesList = gamesIndices.map((i) =>
     <div className={getRoundClass(rounds, gamesCount, i)} key={i}><GameContainer gameId={i} /><br/></div>
   );
