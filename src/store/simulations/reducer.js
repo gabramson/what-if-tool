@@ -7,7 +7,7 @@ const initialState = Immutable({});
 export default function reduce(state = initialState, action = {}) {
     switch (action.type){
         case types.UPDATE_SIMULATIONS:
-            return(_.orderBy(action.simulations, function(e) {return [e.Probabilities[0]/1000]}, ['desc', 'desc', 'desc', 'desc', 'desc', 'desc']));
+            return(_.orderBy(action.simulations, e => {return e.Probabilities.map(p => p/1000)}, Array.from(Array(6)).map(()=>('desc')) ));
         default:
             return state;
     }
