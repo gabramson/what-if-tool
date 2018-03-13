@@ -1,9 +1,10 @@
 import React from 'react';
+import './simulations.css'
 
 const probabilityCell = (probability, index) => {
     return(
         <td key={index}>
-            {probability}
+            {probability.toFixed(3)}
         </td>
     )
 }

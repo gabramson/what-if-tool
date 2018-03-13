@@ -1,0 +1,7 @@
+td {
+    text-align: right;
+}
+
+td:first-of-type {
+    text-align: left;
+}

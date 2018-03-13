@@ -3,7 +3,8 @@ import _ from 'lodash';
 const HOOPS_ENDPOINT = 'http://localhost';
 
 export default async function getSimulationResults(tournamentState) {
-    const queryString = _.map(tournamentState.tournament, function(e) {return `${e}`.padStart(2, "0")}).join("");
+    console.log(tournamentState);
+    const queryString = _.map(tournamentState, function(e) {return `${e}`.padStart(2, "0")}).join("");
     const url = `${HOOPS_ENDPOINT}/RunSimulations/?state=${queryString}`;
     const response = await fetch(url, {
       method: 'GET',

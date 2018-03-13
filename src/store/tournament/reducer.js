@@ -37,3 +37,8 @@ export function getGames(state){
     const games = (n-1)/2;
     return games;
 };
+
+export function getSimulationInput(state){
+    const n = state.tournament.length;
+    return (state.tournament.slice(-(n-1)/2));    
+}
