@@ -1,11 +1,10 @@
 import _ from 'lodash';
 
-const HOOPS_ENDPOINT = 'http://localhost';
+const HOOPS_ENDPOINT = 'http://garya.duckdns.org/hoops/results';
 
 export default async function getSimulationResults(tournamentState) {
-    console.log(tournamentState);
     const queryString = _.map(tournamentState, function(e) {return `${e}`.padStart(2, "0")}).join("");
-    const url = `${HOOPS_ENDPOINT}/RunSimulations/?state=${queryString}`;
+    const url = `${HOOPS_ENDPOINT}/RunSimulations.php/?state=${queryString}`;
     const response = await fetch(url, {
       method: 'GET',
       headers: {

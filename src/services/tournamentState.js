@@ -1,9 +1,9 @@
 import _ from 'lodash';
 
-const HOOPS_ENDPOINT = 'http://localhost';
+const HOOPS_ENDPOINT = 'http://garya.duckdns.org/hoops/results';
 
 export async function getInitialState() {
-    const url = `${HOOPS_ENDPOINT}/TournamentState/`;
+    const url = `${HOOPS_ENDPOINT}/tournament_state.php`;
     const response = await fetch(url, {
       method: 'GET',
       headers: {
