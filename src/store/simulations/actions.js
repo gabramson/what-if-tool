@@ -6,7 +6,6 @@ export function runSimulations() {
 	return async function(dispatch, getState){
 		try {
 			const simulationInput = getSimulationInput(getState());
-			console.log(simulationInput);
 			const simulationResults = await getSimulationResults(simulationInput);
 			dispatch({type: types.UPDATE_SIMULATIONS, simulations: simulationResults});
 		} catch(error) {
