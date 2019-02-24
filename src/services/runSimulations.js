@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-const HOOPS_ENDPOINT = 'http://localhost';
+const HOOPS_ENDPOINT = process.env.REACT_APP_BACKEND_BASEURL;
 
 export default async function getSimulationResults(tournamentState) {
     console.log(tournamentState);
