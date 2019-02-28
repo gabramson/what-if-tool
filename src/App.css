@@ -2,6 +2,7 @@
   text-align: left;
   margin-left: 2em;
   line-height: 18px;
+  min-width: 60em;
 }
 
 .App-logo {
@@ -37,36 +38,34 @@
 }
 
 .Round2 {
-  margin-left: 18em;
-  margin-top: -205ex;
-  margin-bottom: 211.5ex;
+  margin-left: 16em;
+  margin-top: -49ex;
+  margin-bottom: 56ex;
 }
 
 .Round3 {
-  margin-left: 34em;
-  margin-top: -408ex;
-  margin-bottom: 427.5ex;
+  margin-left: 28em;
+  margin-top: -97ex;
+  margin-bottom: 117ex;
 }
 
 .Round4 {
-  margin-left: 50em;
-  margin-top: -603ex;
-  margin-bottom: 648.5ex;
+  margin-left: 40em;
+  margin-top: -137ex;
 }
 
 .Round5 {
-  margin-left: 64em;
-  margin-top: -785ex;
-  margin-bottom: 880ex;
+  margin-top: 5ex;
+  margin-bottom: -5ex;
 }
 
 .Round6 {
-  margin-left: 74em;
-  margin-top: -930ex;
+  margin-left: 12em;
+  margin-top: -10ex;
 }
 
 .Winner {
-  margin-left: 94em;
+  margin-left: 24em;
   margin-top: -5ex;
 }
 
