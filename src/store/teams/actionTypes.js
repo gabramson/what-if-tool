@@ -1,0 +1,1 @@
+export const TEAMS_FETCHED = "teams.TEAMS_FETCHED";

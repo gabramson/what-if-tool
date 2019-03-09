@@ -1,72 +1,24 @@
-const TeamNames = [
-    "Villanova",
-    "Duke",
-    "Baylor",
-    "Florida",
-    "Virginia",
-    "SMU",
-    "South Carolina",
-    "Wisconsin",
-    "Virginia Tech",
-    "Marquette",
-    "Providence/USC",
-    "N. Carolina-Wilmington",
-    "East Tenn. St.",
-    "New Mexico St.",
-    "Troy",
-    "Mt. St. Mary's/New Orleans",
-    "Gonzaga",
-    "Arizona",
-    "Florida State",
-    "West Virginia",
-    "Notre Dame",
-    "Maryland",
-    "St. Mary's (Cal.)",
-    "Northwestern",
-    "Vanderbilt",
-    "VCU",
-    "Xavier",
-    "Princeton",
-    "Bucknell",
-    "Florida-Gulf Coast",
-    "North Dakota",
-    "South Dakota St.",
-    "Kansas",
-    "Louisville",
-    "Oregon",
-    "Purdue",
-    "Iowa State",
-    "Creighton",
-    "Michigan",
-    "Miami (Fla.)",
-    "Michigan State",
-    "Oklahoma State",
-    "Rhode Island",
-    "Nevada",
-    "Vermont",
-    "Iona",
-    "Jacksonville St.",
-    "N. Carolina Central/California-Davis",
-    "North Carolina",
-    "Kentucky",
-    "UCLA",
-    "Butler",
-    "Minnesota",
-    "Cincinnati",
-    "Dayton",
-    "Arkansas",
-    "Seton Hall",
-    "Wichita State",
-    "Kansas St./Wake Forest",
-    "Middle Tennessee St.",
-    "Winthrop",
-    "Kent State",
-    "Northern Kentucky",
-    "Texas Southern"
-];
+import _ from "lodash";
 
-const GetTeamName = (teamId) => (
-    teamId === 0 ? '______' : TeamNames[teamId-1]
-)
+const HOOPS_ENDPOINT = process.env.REACT_APP_BACKEND_BASEURL;
 
-export default GetTeamName
+export async function getTeams() {
+    const url = `${HOOPS_ENDPOINT}/Teams/`;
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        Accept: "application/json"
+      }
+    });
+    if (!response.ok) {
+      throw new Error(
+        `Teams service failed, HTTP status ${response.status}`
+      );
+    }
+    const data = await response.json();
+    const children = _.get(data, "TeamNames");
+    if (!children) {
+      throw new Error(`Teams failed, children not returned`);
+    }
+    return children;
+}

@@ -18,15 +18,15 @@ const getRoundClass = (rounds, gamesCount, game) => {
 const inRegion = (game, region) => {
   switch(region) {
     case 1:
-      return((game>=1 && game <=8) || (game>=33 && game <=36) || game==49 || game==50 || game == 57);
+      return((game>=1 && game <=8) || (game>=33 && game <=36) || game===49 || game===50 || game === 57);
     case 2:
-      return((game>=9 && game <=16) || (game>=37 && game <=40) || game==51 || game==52 || game == 58 );
+      return((game>=9 && game <=16) || (game>=37 && game <=40) || game===51 || game===52 || game === 58 );
     case 3:
-      return((game>=17 && game <=24) || (game>=41 && game <=44) || game==53 || game==54 || game == 59 );
+      return((game>=17 && game <=24) || (game>=41 && game <=44) || game===53 || game===54 || game === 59 );
     case 4:
-      return((game>=25 && game <=32) || (game>=45 && game <=48) || game==55 || game==56 || game == 60 );
+      return((game>=25 && game <=32) || (game>=45 && game <=48) || game===55 || game===56 || game === 60 );
     default:
-      return((game>=61 && game <=63) );
+      return( game>=61 );
   }
 }
 

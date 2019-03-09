@@ -1,8 +1,17 @@
 import * as types from "./actionTypes";
 import Immutable from "seamless-immutable";
-import GetTeamName from "../../services/teams";
+import {GetTeamName} from "../teams/reducer";
 
-const initialState = Immutable([1, 2, 0]);
+const initialState = Immutable([
+  1, 16, 8, 9, 5, 12, 4, 13, 6, 11, 3, 14, 7, 10, 2, 15, 
+  17, 32, 24, 25, 21, 28, 20, 29, 22, 27, 19, 30, 23, 26, 18, 31, 
+  33, 48, 40, 41, 37, 44, 36, 45, 38, 43, 35, 46, 39, 42, 34, 47,
+  49, 64, 56, 57, 53, 60, 52, 61, 54, 59, 51, 62, 55, 58, 50, 63,
+  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+]);
 
 export default function reduce(state = initialState, action = {}) {
   const n = state.length;
@@ -26,13 +35,13 @@ export default function reduce(state = initialState, action = {}) {
 // selectors
 export function getGameLines(state, props) {
   return [
-    GetTeamName(state.tournament[2 * props.gameId - 2]),
-    GetTeamName(state.tournament[2 * props.gameId - 1])
+    GetTeamName(state, state.tournament[2 * props.gameId - 2]),
+    GetTeamName(state, state.tournament[2 * props.gameId - 1])
   ];
 }
 
 export function getWinnerLine(state) {
-  return GetTeamName(state.tournament.slice(-1)[0]);
+  return GetTeamName(state, state.tournament.slice(-1)[0]);
 }
 
 export function getGames(state) {
