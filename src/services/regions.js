@@ -1,9 +1,7 @@
-import _ from "lodash";
-
 const HOOPS_ENDPOINT = process.env.REACT_APP_BACKEND_BASEURL;
 
-export async function getTeams() {
-    const url = `${HOOPS_ENDPOINT}/Teams/`;
+export async function getRegions() {
+    const url = `${HOOPS_ENDPOINT}/Regions/`;
     const response = await fetch(url, {
       method: "GET",
       headers: {
@@ -12,13 +10,13 @@ export async function getTeams() {
     });
     if (!response.ok) {
       throw new Error(
-        `Teams service failed, HTTP status ${response.status}`
+        `Regions service failed, HTTP status ${response.status}`
       );
     }
     const data = await response.json();
-    const children = data.TeamNames;
+    const children = data.Regions;
     if (!children) {
-      throw new Error(`Teams failed, children not returned`);
+      throw new Error(`Regions failed, children not returned`);
     }
     return children;
 }

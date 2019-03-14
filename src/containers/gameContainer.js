@@ -5,7 +5,6 @@ import Game from "../components/game";
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    gameId: ownProps.gameId,
     lines: getGameLines(state, ownProps)
   };
 };

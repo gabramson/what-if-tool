@@ -8,10 +8,12 @@ import './index.css';
 import * as reducers from './store/reducers';
 import {fetchInitialState} from './store/tournament/actions'
 import {fetchTeams} from './store/teams/actions'
+import {fetchRegions} from './store/regions/actions'
 
 const store = createStore(combineReducers(reducers), {}, applyMiddleware(thunk));
 
 store.dispatch(fetchTeams());
+store.dispatch(fetchRegions());
 store.dispatch(fetchInitialState());
 
 ReactDOM.render(

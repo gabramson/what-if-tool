@@ -1,0 +1,1 @@
+export const REGIONS_FETCHED = "regions.REGIONS_FETCHED";
