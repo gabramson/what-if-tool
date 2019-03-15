@@ -23,19 +23,23 @@ const myApp = (props) => {
     <Tabs defaultActiveKey="region1">
       <Tab eventKey="region1" title={names[0]}>
         <GamesContainer regionId="1" />
+        <WinnerContainer type="RegionWinner" gameId="57" />
       </Tab>
       <Tab eventKey="region2" title={names[1]}>
         <GamesContainer regionId="2" />
+        <WinnerContainer type="RegionWinner" gameId="58" />
       </Tab>
       <Tab eventKey="region3" title={names[2]}>
         <GamesContainer regionId="3" />
+        <WinnerContainer type="RegionWinner" gameId="59" />
       </Tab>
       <Tab eventKey="region4" title={names[3]}>
         <GamesContainer regionId="4" />
+        <WinnerContainer type="RegionWinner" gameId="60" />
       </Tab>
       <Tab eventKey="final_four" title="Final Four">
         <GamesContainer regionId="5" />
-        <WinnerContainer />
+        <WinnerContainer type="OverallWinner" gameId="63" />
       </Tab>
       <Tab eventKey="simulations" title="Simulations">
         <SimulationsContainer />

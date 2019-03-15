@@ -64,7 +64,12 @@
   margin-top: -10ex;
 }
 
-.Winner {
+.RegionWinner {
+  margin-left: 52em;
+  margin-top: -5ex;
+}
+
+.OverallWinner {
   margin-left: 24em;
   margin-top: -5ex;
 }

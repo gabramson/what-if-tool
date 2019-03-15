@@ -40,8 +40,8 @@ export function getGameLines(state, props) {
   ];
 }
 
-export function getWinnerLine(state) {
-  return GetTeamName(state, state.tournament.slice(-1)[0]);
+export function getWinnerLine(state, gameId) {
+  return GetTeamName(state, state.tournament[parseInt(gameId) + 63]);
 }
 
 export function getGames(state) {
