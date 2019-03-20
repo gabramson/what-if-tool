@@ -8,6 +8,12 @@ export function advanceTeam(game, line) {
   };
 }
 
+export function clearTeam(game, line) {
+  return (dispatch, getState) => {
+    dispatch({ type: types.CLEAR_TEAM, game, line });
+  };
+}
+
 export function fetchInitialState() {
   return async function(dispatch, getState) {
     try {

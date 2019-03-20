@@ -1,5 +1,3 @@
-import _ from "lodash";
-
 const HOOPS_ENDPOINT = process.env.REACT_APP_BACKEND_BASEURL;
 
 export async function getTeams() {

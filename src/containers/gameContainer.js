@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { getGameLines } from "../store/tournament/reducer";
-import { advanceTeam } from "../store/tournament/actions";
+import { advanceTeam, clearTeam } from "../store/tournament/actions";
 import Game from "../components/game";
 
 const mapStateToProps = (state, ownProps) => {
@@ -13,6 +13,9 @@ const mapDispatchToProps = dispatch => {
   return {
     onLineClick: (gameId, line) => {
       dispatch(advanceTeam(gameId, line));
+    },
+    onClearClick: (gameId, line) => {
+      dispatch(clearTeam(gameId, line));
     }
   };
 };

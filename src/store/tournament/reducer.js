@@ -16,7 +16,7 @@ const initialState = Immutable([
 export default function reduce(state = initialState, action = {}) {
   const n = state.length;
   const rounds = Math.log2(n + 1) - 1;
-  const currentSlot = 2 * (action.game - 1) + action.line;
+  const currentSlot = action.line === types.lines.WINNER ? parseInt(action.game, 10) + 63 : 2 * (action.game - 1) + action.line;
   const nextSlot = Math.floor(currentSlot / 2) + Math.pow(2, rounds);
   switch (action.type) {
     case types.ADVANCE_TEAM:
@@ -24,6 +24,13 @@ export default function reduce(state = initialState, action = {}) {
         ...state.slice(0, nextSlot),
         state[currentSlot],
         ...state.slice(nextSlot + 1, n)
+      ];
+    case types.CLEAR_TEAM:
+      const team = state[currentSlot];
+      return [
+        ...state.slice(0, currentSlot),
+        0,
+        ...state.slice(currentSlot + 1, n).map(x => x===team?0:x)
       ];
     case types.INITIAL_STATE_FETCHED:
       return action.tournament;
@@ -41,7 +48,7 @@ export function getGameLines(state, props) {
 }
 
 export function getWinnerLine(state, gameId) {
-  return GetTeamName(state, state.tournament[parseInt(gameId) + 63]);
+  return GetTeamName(state, state.tournament[parseInt(gameId, 10) + 63]);
 }
 
 export function getGames(state) {
