@@ -39,19 +39,19 @@
 
 .Round2 {
   margin-left: 16em;
-  margin-top: -52.5ex;
-  margin-bottom: 59.5ex;
+  margin-top: -48.5ex;
+  margin-bottom: 54.5ex;
 }
 
 .Round3 {
   margin-left: 28em;
-  margin-top: -103ex;
-  margin-bottom: 123ex;
+  margin-top: -95ex;
+  margin-bottom: 116ex;
 }
 
 .Round4 {
   margin-left: 40em;
-  margin-top: -143ex;
+  margin-top: -137ex;
 }
 
 .Round6 {
@@ -71,6 +71,10 @@
 
 .Clear {
   font-size: x-small;
+}
+
+.Round1 .Clear {
+  display: none;
 }
 
 @keyframes App-logo-spin {
